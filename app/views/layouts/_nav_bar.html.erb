@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <%= link_to "Home", posts_path, class:"navbar_brand", style:"margin-left: 20px;" %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent", style= "margin-left:20px;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+
+       </li>
+      <li class="nav-item">
+        <%= link_to "Upload Post", new_post_path, class: "nav_link" %>
+      </li>
+
+      <li class="nav-item">
+       <%= link_to "About Page", home_about_path, class: "nav_link"%>
+      </li>
+
+      <% if user_signed_in? %>
+      <li class="nav-item">
+       <%= link_to "Sign out", destroy_user_session_path, class:"nav_link" %>
+      </li>
+     <li class="nav-item">
+       <%= link_to "View my Posts", posts_mypostsS_path, class:"nav_link" %>
+      </li>
+
+      <% else %>
+
+
+      <li class="nav-item">
+       <%= link_to "Sign Up", new_user_registration_path, class:"nav_link"%>
+      </li>
+      <% end %>
+      <li class="nav-item">
+       <%= link_to "Edit Account", edit_user_registration_path, class:"nav_link" %>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
